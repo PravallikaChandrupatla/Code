@@ -11,12 +11,15 @@ nav{
     background-color: white;
     box-shadow: 5px 0px 5px #888889;
     margin: 5px 0px 0px 0px;
-    position: fixed !important;
+    position: fixed;
     z-index: 1;
+}
+.input-group{
+    width: 100%;
 }
 ul.navOptions{
     margin: 0 auto;
-    padding: 0px 135px !important;
+    padding: 0px 85px;
     display: inline-block;
 }
 ul.navOptions li{
@@ -71,16 +74,23 @@ ul.navOptions li:hover{
 .mainContainer{
     height: 600px;
     width: 100%;
-    padding: 100px 0px 30px;
+    padding: 50px 0px 30px;
     margin-bottom: 5px;
     background:linear-gradient(to left, rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 50%), url('Images/BackBanner1.jpg');
     /* background-image: url(Images/BackBanner.jpg),linear-gradient(to bottom, #ADB2B6, #ABAEB3); */
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.ContainerSection{
+.BookingSlotContainer{
+    /* overflow-x: auto; */
+    padding: 0px;
+}
+/* .ContainerSection{
     margin-top: 65px;
-}
+} */
 .mainContainer h1{
     font-size: 65px;
     font-weight: 700;
@@ -120,7 +130,7 @@ h4{
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     border-radius: 0;
-    border-bottom: 2px solid #6ddcd6 !important;
+    border-bottom: 2px solid #6ddcd6;
     padding: 10px;
     border-right: 1.5px solid lightgray;
     border-left: 1.5px solid lightgray;
@@ -135,11 +145,17 @@ h4{
     color: #6ddcd6;
     font-weight: 600;
 }
+.nav-pills{
+    display: flex;
+}
 .nav-pills>li{
     padding: 0;
+    display: flex;
+    flex: 1;
 }
 .nav-pills>li>a{
     border-bottom: 2px solid lightgray;
+     flex: 1;
     
 }
  fieldset {
@@ -159,7 +175,7 @@ legend {
     display: block;
     width: auto;
     padding: 0;
-    margin-bottom: 0px;
+    margin-bottom: -6px;
     font-size: 12px;
     line-height: inherit;
     color: #6ddcd6;
@@ -190,7 +206,7 @@ legend {
 #purpose{
     border: 0px;
     border-radius: 0px;
-    font-size: 16px;
+    font-size: 14px;
     color: lightgray;
     font-weight: 700;
     box-shadow: none;
@@ -211,7 +227,7 @@ legend {
 .dropdown:after {
 	font-family: FontAwesome;
     content: '\f107';
-    font-size: 28px;
+    font-size: 24px;
     position: absolute;
     top: 0px;
     right: 20px;
@@ -259,7 +275,7 @@ legend {
 } */
 
 .tab-pane:nth-child(1){
-    margin: 0px 20px;
+    margin: 5px 20px;
 }
 label {
   display: inline-block;
@@ -306,7 +322,7 @@ input + label {
 }
 .table-bordered>tbody>tr>td{
     border: 1px solid #ddd;
-    padding: 4px 15px;
+    /* padding: 4px 15px; */
     color: gray;
     font-weight: 600;
     font-size: 9px;
@@ -323,8 +339,28 @@ input + label {
 }
 .strikeOut{
      text-decoration: line-through;
-     color: lightgray !important;
+     color: lightgray;
      opacity: 0.5;
+}
+.tabContainer{
+    width: 25%;
+}
+ /* .active{
+    display: inline-grid;
+    background-color: white;
+    position: absolute; 
+    top: 50px; 
+    left: 0;
+    width: 100%;
+} */
+@media (max-width:1200px){
+    /* .tabContainer{
+        width: 35%;
+    } */
+    .BookingSlotContainer {
+        overflow-x: auto;
+        padding: 0px;
+    }
 }
 @media (max-width:768px){
     .toggle{
@@ -334,7 +370,9 @@ input + label {
     ul.navOptions{
         width: 100%;
         display: none;
-        margin-top: 50px;
+        /* margin-top: 50px; */
+        margin: 0 auto;
+        padding: 0px 75px;
     }
     ul li {
           display: block;
@@ -342,24 +380,29 @@ input + label {
         font-size: 18px;
         padding: 15px;
     }
+    
     .mainContainer{
         padding: 30px 0px 30px;
+        display: inline-block;
     }
     .tabContainer{
         width:100%;
+        margin-top: 15px;
     }
-    .active{
-        /* display: inline-grid !important;
+     ul.navOptions.active{
+       display: inline-grid;
         background-color: white;
-        position: absolute; */
-        /* top: 50px; */
+        position: inherit;
         left: 0;
         width: 100%;
-    }
+        position: absolute;
+        top: 50px;
+    } 
     .togglePhn{
         display: inline-block;
         text-align: left;
     }
+
     .nav-pills>li {
         padding: 0;
         /* margin: 20px 0px 20px 0px; */
@@ -370,9 +413,11 @@ input + label {
     }
     .dateContainer{
         text-align: center;
+        display: flex;
+        justify-content: center;
     }
     #datePicker{
-        width:85%;
+        width:100%;
     }
     .form-group{
         margin-bottom: 0px;
